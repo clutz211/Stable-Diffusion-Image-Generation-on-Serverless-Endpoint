@@ -152,7 +152,7 @@ Header:
 
 Test prompt: "a double-black mountain to ski on near Seattle"
 
-
+![Ski Picture](https://github.com/clutz211/Stable-Diffusion-Serverless-Model/blob/main/ski%20picture.png)
 
 
 
