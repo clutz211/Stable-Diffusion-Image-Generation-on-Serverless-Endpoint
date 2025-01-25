@@ -143,7 +143,7 @@ Request Body:
 }
 ```
 # 3.2 Check Status Request (GET) 
-Url: Grab the ID generated from the POST request. Can also check the status of the request here too. 
+URL: Grab the ID generated from the POST request. Can also check the status of the request here too. 
 
 Header: 
 - Authorization: Bearer [API Key]
