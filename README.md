@@ -81,7 +81,12 @@ def handler(event):
 
 if __name__ == "__main__":
     runpod.serverless.start({"handler": handler})
-
+```
+Key Handler Points: 
+- Takes text prompts as input
+- Uses Stable Diffusion model for image generation
+- Includes memory management for GPU efficiency
+- Returns images in base64 format
 
 
 
