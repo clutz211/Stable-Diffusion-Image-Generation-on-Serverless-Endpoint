@@ -1,6 +1,6 @@
 # Stable Diffusion Image Generation on Serverless Endpoint 
 
-# 1) Project Summary 
+# 1. Project Summary 
 
 This project implements a serverless endpoint on a GPU platform that generates images from text prompts. The goal was to create a working API endpoint that could take text descriptions and return AI generated images. 
 
@@ -19,7 +19,7 @@ This project implements a serverless endpoint on a GPU platform that generates i
 - GPU cloud for processing
 - Postman for testing the API
 
-# 2) Configuration & Setup
+# 2. Configuration & Setup
 
 ## 2.1 GPU Cloud Configuration 
 - GPU Type: NVIDIA L4/A5000/3090 with 24GB VRAM
@@ -88,7 +88,59 @@ Key Handler Points:
 - Includes memory management for GPU efficiency
 - Returns images in base64 format
 
+## 2.3 Docker Setup
 
+The project uses a Docker container with the following configuration: 
 
+```dockerfile
+# Start with a lightweight Python image to keep the container small
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set longer timeouts because of my slow internet connection
+ENV PIP_DEFAULT_TIMEOUT=1000
+ENV PIP_RETRIES=10
+
+# Install packages one at a time
+RUN pip3 install --no-cache-dir runpod --timeout 1000
+RUN pip3 install --no-cache-dir torch --timeout 1000
+RUN pip3 install --no-cache-dir transformers --timeout 1000
+RUN pip3 install --no-cache-dir diffusers --timeout 1000
+
+# Copy over handler code
+COPY handler.py .
+
+# Command to run when the container starts
+CMD [ "python3", "-u", "handler.py" ]
+```
+Key Configuration Points: 
+- Built on Python 3.9 slim for image efficiency
+- Includes necessary packages for image generation
+- Configured with extended timeouts for image generation
+
+# 3. Testing with Postman
+
+## 3.1 Generate Image Request (POST)
+URL: Grab URL from GPU cloud
+
+Headers: 
+- Authorization: Bearer [API Key]
+- Content-Type: application/json
+
+Request Body: 
+
+```Postman
+{
+    "input": {
+        "prompt": a doubleblack mountain to ski on near Seattle"
+    }
+}
+'''
 
 
