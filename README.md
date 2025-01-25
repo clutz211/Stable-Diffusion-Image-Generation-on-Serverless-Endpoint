@@ -31,7 +31,7 @@ This project implements a serverless endpoint on a GPU platform that generates i
 
 The handler.py file processes the incoming text prompts and generates images: 
 
-''' 
+\\\
 import runpod
 import torch
 from diffusers import StableDiffusionPipeline
@@ -81,7 +81,7 @@ def handler(event):
 
 if __name__ == "__main__":
     runpod.serverless.start({"handler": handler})
-'''
+\\\
 
 
 
