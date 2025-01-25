@@ -159,31 +159,31 @@ The Endpoint Successsfully:
 - Generated the corresponding image
 - Returned the result through API
 
-## 4. Challenges & Solutions 
+# 4. Challenges & Solutions 
 
-# 4.1 Docker Build Issues
+## 4.1 Docker Build Issues
 - Challenge: Frequent timeouts during package installation
 - Solution: Implemented longer timeouts and installed packaged individually
 - Impact: Successfully built a stable container image
 
-# 4.2 Memory Management 
+## 4.2 Memory Management 
 - Challenge: Memory errors during image generation
 - Solution: Implemented attention slicing and memory cleanup techniques
 - Impact: Achieved stable image generation without memory issues
 
-# 4.3 Devolopment Environments
+## 4.3 Devolopment Environments
 - Challenge: Limited local computer resources
 - Solution: Leveraged RunPod’s GPU instances
 - Impact: Efficient testing and deployment workflow
 
-## 5. Conclusion 
+# 5. Conclusion 
 
 # 5.1 This implementation successfully demonstrates
 - A working serverless endpoint on a GPU cloud
 - API for text-to-image generation
 - Proper error handling and memory management
 
-# 5.2 The endpoint is ready for
+## 5.2 The endpoint is ready for
 - Integration with other applications
 - Scaling based on demand
 - Testing with different prompts
