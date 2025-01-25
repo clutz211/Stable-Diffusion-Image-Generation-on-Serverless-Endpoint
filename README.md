@@ -178,7 +178,7 @@ The Endpoint Successsfully:
 
 # 5. Conclusion 
 
-# 5.1 This implementation successfully demonstrates
+## 5.1 This implementation successfully demonstrates
 - A working serverless endpoint on a GPU cloud
 - API for text-to-image generation
 - Proper error handling and memory management
