@@ -135,12 +135,23 @@ Headers:
 
 Request Body: 
 
-```Postman
+```json
 {
     "input": {
-        "prompt": a doubleblack mountain to ski on near Seattle"
+        "prompt": "A double-black diamond mountain to ski on near Seattle."
     }
 }
-'''
+```
+# 3.2 Check Status Request (GET) 
+Url: Grab the ID generated from the POST request. Can also check the status of the request here too. 
+
+Header: 
+- Authorization: Bearer [API Key]
+
+## 3.3 Example Results 
+
+Test prompt: "a double-black mountain to ski on near Seattle"
+
+
 
 
